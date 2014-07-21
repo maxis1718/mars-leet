@@ -1,0 +1,26 @@
+html, body 
+{
+	margin: 0;
+	padding: 0;
+	clear: both;
+
+	width: 100%;
+}
+
+div.container
+{
+	min-width: 400px;
+	max-width: 1024px;
+	width: 64%;
+	background: orange;
+	margin: 1.5em auto;
+}
+	.input-wrap
+	{
+		width: 80%;
+	}
+
+		.input-wrap input
+		{
+			width: 100%;
+		}
