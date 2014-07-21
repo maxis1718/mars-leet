@@ -6,23 +6,56 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 
 	<meta name="description" content="Mars-leet : translate Chinese keyboard leet" />
-	<title>Mars-leet</title>
 
 
 	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css">
-	<script type="text/javascript" src="javascripts/jquery.js"></script>
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<link rel="shortcut icon" type="image/png" href="images/baby_penguin.png"/>
 	
-	<title>Mars-leet</title>
+	<title>Penguin says 鵝鵝</title>
 
 </head>
 <body>
 	<div class="container">
-		<div id="input-wrap">
-			<input></input>
-		</div>
-		<div id="res-wrap">
+		<section class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="block logo" src="images/penguin.jpg" height="256px" />
+						<img class="block logo hide" src="images/penguin.stupid.jpg" height="256px" />
+					</div>
+					<div class="col-md-8">
+						<div class="greeting-msg block"></div>
+					</div>
+				</div>
+				
+				<input class="input-area block" placeholder="try: k6k6"></input>
+				<div class="block" id="res-wrap"></div>
+			</div>
+			<div class="col-md-2"></div>
+		</section>
 
-		</div>
+		<section class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				
+			</div>
+			<div class="col-md-2"></div>
+		</section>
+
+		<section class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				
+			</div>
+			<div class="col-md-2"></div>
+		</section>		
+
 	</div>
 	<script type="text/javascript" src="javascripts/main.js"></script>
 	
