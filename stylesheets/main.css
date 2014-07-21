@@ -52,3 +52,11 @@ html, body
 		line-height: 32px;
 		margin-bottom: 32px;		
 	}
+
+footer 
+{
+	position: fixed;
+	bottom: 5px;
+	right: 10px;
+	color: #666;
+}
