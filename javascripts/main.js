@@ -10,6 +10,9 @@ $(document).ready(function(){
 	setInterval(greeting, 3000);
 
 	$('input.input-area').focus();
+
+	trying();
+
 });
 
 var table = {
@@ -54,6 +57,7 @@ var table = {
 	'.': 'ㄡ',
 	'/': 'ㄥ',
 	' ': ' ',
+	'-': 'ㄦ',
 }
 
 var GreetingWords = ['鵝', '額'];
@@ -85,18 +89,39 @@ function greeting()
 	first = false;
 }
 
-
+function trying()
+{
+	$('.try-item').click(function(){
+		var leet = $(this).find('.leet').text();
+		$('.input-area').val(leet).keyup();
+	});
+}
 
 function mapping(keyboard)
 {
 	var target = $('#res-wrap');
+	var allow = true;
 
-	$('.input-area').keyup(function(e){
+	$('.input-area').keydown(function(e){
+
+
+		// console.log(e);
+		// var str = $.trim($(this).val());
+		// var mapped = table[str[str.length-1]];
+		// allow = mapped ? true : false;
+
+		// console.log(str, mapped, allow);
+
+	}).keyup(function(e){
+
+		if(!allow){
+			return false;
+		}
 
 		var bpmf = [];
 		var str = $.trim($(this).val());
 
-		for (var i = 0, len = str.length; i < len; i++) 
+		for (var i = 0, len = str.length; i < len; i++)
 		{ 
 			var mapped = table[str[i]];
 			if( mapped )
@@ -105,11 +130,20 @@ function mapping(keyboard)
 				bpmf.push(mapped)
 			}
 		}
-		target.html('');
-		for (var i = 0; i < bpmf.length; i++)
+		if(bpmf.length > 0)
 		{
-			var mapped = bpmf[i];
-			$('<span/>').text(mapped).appendTo(target);
+			target.html('');
+			target.removeClass('hide');
+			for (var i = 0; i < bpmf.length; i++)
+			{
+				var mapped = bpmf[i];
+				$('<span/>').text(mapped).appendTo(target);
+			}			
+		}else
+		{
+			target.addClass('hide');
 		}
+		
+
 	});
 }
